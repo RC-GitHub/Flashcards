@@ -114,9 +114,10 @@ Myszka nie jest podłączona do komputera. – Die Maus ist nicht an den PC ange
   }
 
   function checkAnswer() {
+    
     input.disabled = true;
-    const userAnswer = input.value.trim().toLowerCase();
-    const correct = cards[current].answer.toLowerCase();
+    const userAnswer = input.value.trim().toLowerCase().replace(/\.$/, '');
+    const correct = cards[current].answer.toLowerCase().replace(/\.$/, '');
 
     if (userAnswer === correct) {
       resultDiv.style.color = "green";
