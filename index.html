@@ -126,11 +126,16 @@ Myszka nie jest podłączona do komputera. – Die Maus ist nicht an den PC ange
       setTimeout(() => {
       current = (current + 1) % cards.length;
       showCard();
-    }, 2000);
+    }, 1000);
 
     } else {
       resultDiv.style.color = "red";
       resultDiv.textContent = `❌ Błąd. Poprawna odpowiedź: ${cards[current].answer}`;
+
+      setTimeout(() => {
+      current = (current + 1) % cards.length;
+      showCard();
+    }, 3000);
     }
   }
 
