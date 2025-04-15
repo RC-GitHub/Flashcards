@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiszki z niemieckimi znakami</title>
+  <style>
+    body { font-family: sans-serif; max-width: 700px; margin: auto; padding-top: 40px; text-align: center; }
+    h1 { font-size: 26px; }
+    #question { font-size: 22px; margin: 20px 0; }
+    input[type="text"] { width: 80%; padding: 10px; font-size: 18px; }
+    .char-buttons { margin-top: 10px; }
+    .char-buttons button, #skipButton { font-size: 18px; padding: 6px 12px; margin: 2px; }
+    #result { margin: 15px 0; font-weight: bold; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<h1>🇩🇪 Fiszki – Typuj po niemiecku</h1>
+<div id="question"></div>
+<input type="text" id="answerInput" placeholder="Wpisz odpowiedź i naciśnij Enter">
+
+<div class="char-buttons">
+  <button onclick="insertChar('ä')">ä</button>
+  <button onclick="insertChar('ö')">ö</button>
+  <button onclick="insertChar('ü')">ü</button>
+  <button onclick="insertChar('Ä')">Ä</button>
+  <button onclick="insertChar('Ö')">Ö</button>
+  <button onclick="insertChar('Ü')">Ü</button>
+  <button onclick="insertChar('ß')">ß</button>
+</div>
+<button id="skipButton">Skip</button>
+
+<div id="result"></div>
+
+<script>
+
+document.getElementById("skipButton").addEventListener("click", function () {
+  current = (current + 1) % cards.length;
+  showCard();
+});
+
+
+  const cards = `Czy możesz pożyczyć mi swoją ładowarkę? – Kannst du mir dein Ladekabel leihen?
+Czy możesz uruchomić komputer? – Kannst du den Computer hochfahren?
+Czy mógłbyś wyłączyć komputer? – Könntest du den PC herunterfahren?
+Czy mógłbyś wyłączyć drukarkę? – Würdest du bitte den Drucker ausschalten?
+Jak mogę otworzyć ten plik? – Wie kann ich die Datei öffnen?
+Jak mogę zapisać ten plik? – Wie kann ich die Datei speichern?
+Jak mogę zamknąć ten plik? – Wie kann ich die Datei schließen?
+Gdzie mogę naprawić telefon? – Wo kann ich das Handy reparieren lassen?
+Sylt leży na Morzu Północnym. – Sylt liegt in der Nordsee.
+Flensburg leży na półwyspie. – Flensburg liegt auf einer Halbinsel.
+W parku narodowym jest wodospad. – Im Nationalpark gibt es einen Wasserfall.
+Most prowadzi nad Renem. – Die Brücke führt über den Rhein.
+Szczyt górski jest pokryty śniegiem. – Der Berggipfel ist mit Schnee bedeckt.
+Górskie łąki są zielone. – Die Bergwiesen sind grün.
+Wydmy na plaży są bardzo malownicze. – Die Dünen am Strand sind sehr malerisch.
+Okolica jest płaska i monotonna. – Die Gegend ist flach und monoton.
+Otoczenie jest górzyste. – Die Umgebung ist bergig.
+Nad rzeką rosną drzewa. – Am Flussufer wachsen Bäume.
+Krajobraz jest przepiękny. – Die Landschaft ist wunderschön.
+Wiosną jest deszczowo. – Im Frühling ist es regnerisch.
+Latem też są burze. – Auch im Sommer ist es gewittrig.
+Jesienią jest burzliwie. – Im Herbst ist es stürmisch.
+Zimą często występują zamiecie śnieżne. – Im Winter gibt es immer wieder Schneestürme.
+Wiatr jest lodowaty. – Der Wind ist eisig.
+Masz zwierzątko domowe? – Hast du ein Haustier?
+Mam psa. – Ich habe einen Hund.
+Chciałbyś mieć zwierzątko? – Hättest du gern ein Haustier?
+Chciałbym mieć królika. – Ich hätte gern ein Kaninchen.
+Czy miałeś już kiedyś zwierzątko? – Hattest du schon einmal ein Haustier?
+Kiedyś mieliśmy kota. – Wir hatten früher eine Katze.
+Kanarki są łatwe w pielęgnacji. – Kanarienvögel sind pflegeleicht.
+Węże są niebezpieczne i nie są towarzyskie. – Schlangen sind gefährlich und nicht kontaktfreudig.
+Psy są wierne i towarzyskie. – Hunde sind treu und gesellig.
+Papugi są inteligentne i zabawne. – Papageien sind intelligent und lustig.
+Pies szczeka. – Der Hund bellt.
+Kot miauczy. – Die Katze miaut.
+Koń rży. – Das Pferd wiehert.
+Krowa muczy. – Die Kuh muht.
+Mysz piszczy. – Die Maus piepst.
+Wąż syczy. – Die Schlange zischt.
+Ptaki ćwierkają. – Die Vögel zwitschern.
+Drukarka nie jest włączona. – Der Drucker ist nicht eingeschaltet.
+Myszka nie jest podłączona do komputera. – Die Maus ist nicht an den PC angeschlossen.`.split('\n')
+  .filter(line => line.includes('–'))
+  .map(line => {
+    const [pl, de] = line.split('–');
+    return { question: pl.trim(), answer: de.trim() };
+  });
+
+  // Shuffle
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  shuffleArray(cards);
+
+  let current = 0;
+  const questionDiv = document.getElementById("question");
+  const input = document.getElementById("answerInput");
+  const resultDiv = document.getElementById("result");
+
+  function showCard() {
+    resultDiv.textContent = "";
+    input.value = "";
+    questionDiv.textContent = cards[current].question;
+    input.disabled = false;
+    input.focus();
+  }
+
+  function checkAnswer() {
+    input.disabled = true;
+    const userAnswer = input.value.trim().toLowerCase();
+    const correct = cards[current].answer.toLowerCase();
+
+    if (userAnswer === correct) {
+      resultDiv.style.color = "green";
+      resultDiv.textContent = "✅ Poprawnie!";
+
+      setTimeout(() => {
+      current = (current + 1) % cards.length;
+      showCard();
+    }, 2000);
+
+    } else {
+      resultDiv.style.color = "red";
+      resultDiv.textContent = `❌ Błąd. Poprawna odpowiedź: ${cards[current].answer}`;
+    }
+  }
+
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      checkAnswer();
+    }
+  });
+
+  function insertChar(char) {
+    const start = input.selectionStart;
+    const end = input.selectionEnd;
+    const text = input.value;
+    input.value = text.slice(0, start) + char + text.slice(end);
+    input.focus();
+    input.setSelectionRange(start + 1, start + 1);
+  }
+
+  showCard();
+</script>
+
+</body>
+</html>
