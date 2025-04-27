@@ -70,9 +70,9 @@ Czy dostanę kredyt odnawialny? — Bekomme ich einen Dispositionskredit?
 Ile kosztuje konto miesięcznie? — Wie viel kostet das Konto monatlich?
 Jak mogę umówić się na spotkanie? — Wie kann ich einen Termin vereinbaren?
 Gdzie jest najbliższa filia banku? — Wo ist die nächste Bankfiliale?`.split('\n')
-  .filter(line => /[-–—]/.test(line))
+  .filter(line => /[–—]/.test(line))
   .map(line => {
-    const [pl, de] = line.split(/[-–—]/);
+    const [pl, de] = line.split(/[–—]/);
     return { question: pl?.trim(), answer: de?.trim() };
   });
 
