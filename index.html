@@ -41,49 +41,35 @@ document.getElementById("skipButton").addEventListener("click", function () {
 });
 
 
-  const cards = `Czy możesz pożyczyć mi swoją ładowarkę? – Kannst du mir dein Ladekabel leihen?
-Czy możesz uruchomić komputer? – Kannst du den Computer hochfahren?
-Czy mógłbyś wyłączyć komputer? – Könntest du den PC herunterfahren?
-Czy mógłbyś wyłączyć drukarkę? – Würdest du bitte den Drucker ausschalten?
-Jak mogę otworzyć ten plik? – Wie kann ich die Datei öffnen?
-Jak mogę zapisać ten plik? – Wie kann ich die Datei speichern?
-Jak mogę zamknąć ten plik? – Wie kann ich die Datei schließen?
-Gdzie mogę naprawić telefon? – Wo kann ich das Handy reparieren lassen?
-Sylt leży na Morzu Północnym. – Sylt liegt in der Nordsee.
-Flensburg leży na półwyspie. – Flensburg liegt auf einer Halbinsel.
-W parku narodowym jest wodospad. – Im Nationalpark gibt es einen Wasserfall.
-Most prowadzi nad Renem. – Die Brücke führt über den Rhein.
-Szczyt górski jest pokryty śniegiem. – Der Berggipfel ist mit Schnee bedeckt.
-Górskie łąki są zielone. – Die Bergwiesen sind grün.
-Wydmy na plaży są bardzo malownicze. – Die Dünen am Strand sind sehr malerisch.
-Okolica jest płaska i monotonna. – Die Gegend ist flach und monoton.
-Otoczenie jest górzyste. – Die Umgebung ist bergig.
-Nad rzeką rosną drzewa. – Am Flussufer wachsen Bäume.
-Krajobraz jest przepiękny. – Die Landschaft ist wunderschön.
-Wiosną jest deszczowo. – Im Frühling ist es regnerisch.
-Latem też są burze. – Auch im Sommer ist es gewittrig.
-Jesienią jest burzliwie. – Im Herbst ist es stürmisch.
-Zimą często występują zamiecie śnieżne. – Im Winter gibt es immer wieder Schneestürme.
-Wiatr jest lodowaty. – Der Wind ist eisig.
-Masz zwierzątko domowe? – Hast du ein Haustier?
-Mam psa. – Ich habe einen Hund.
-Chciałbyś mieć zwierzątko? – Hättest du gern ein Haustier?
-Chciałbym mieć królika. – Ich hätte gern ein Kaninchen.
-Czy miałeś już kiedyś zwierzątko? – Hattest du schon einmal ein Haustier?
-Kiedyś mieliśmy kota. – Wir hatten früher eine Katze.
-Kanarki są łatwe w pielęgnacji. – Kanarienvögel sind pflegeleicht.
-Węże są niebezpieczne i nie są towarzyskie. – Schlangen sind gefährlich und nicht kontaktfreudig.
-Psy są wierne i towarzyskie. – Hunde sind treu und gesellig.
-Papugi są inteligentne i zabawne. – Papageien sind intelligent und lustig.
-Pies szczeka. – Der Hund bellt.
-Kot miauczy. – Die Katze miaut.
-Koń rży. – Das Pferd wiehert.
-Krowa muczy. – Die Kuh muht.
-Mysz piszczy. – Die Maus piepst.
-Wąż syczy. – Die Schlange zischt.
-Ptaki ćwierkają. – Die Vögel zwitschern.
-Drukarka nie jest włączona. – Der Drucker ist nicht eingeschaltet.
-Myszka nie jest podłączona do komputera. – Die Maus ist nicht an den PC angeschlossen.`.split('\n')
+  const cards = `Czy mógłbyś wyprowadzić psa? — Könntest du bitte den Hund ausführen?
+Czy mógłbyś nakarmić kota? — Würdest du bitte die Katze füttern?
+Czy możesz zająć się rybami? — Kannst du dich bitte um die Fische kümmern?
+Czy może Pan/Pani wziąć psa na smycz? — Können Sie bitte den Hund an die Leine nehmen?
+Gdzie kupujesz okulary przeciwsłoneczne? — Wo kaufst du Sonnenbrillen?
+Gdzie kupujesz nowe buty? — Wo kaufst du neue Schuhe?
+Jak często potrzebujesz nowego telefonu? — Wie oft brauchst du ein neues Handy?
+Na co wydajesz swoje kieszonkowe? — Wofür gibst du dein Taschengeld aus?
+Czy coś zbierasz? — Sammelst du etwas?
+Czy oszczędzasz pieniądze? — Sparst du Geld?
+Przepraszam, gdzie jest dział sportowy? — Entschuldigung, wo ist die Sportabteilung?
+Przepraszam, szukam działu obuwniczego. — Verzeihung, ich suche die Schuhabteilung.
+Ta sukienka wygląda na tobie świetnie. — Das Kleid steht dir super.
+Myślę, że koniecznie powinieneś kupić tę kurtkę. — Ich finde, du solltest die Jacke unbedingt kaufen.
+Na twoim miejscu wziąłbym ten sweter. — An deiner Stelle würde ich den Pulli nehmen.
+Myślę, że lepiej kupić ubrania gdzie indziej. — Ich finde, Kleidung solltest du lieber woanders kaufen.
+Myślę, że urządzenia techniczne najlepiej kupować w sklepie specjalistycznym. — Ich denke, technische Geräte kauft man am besten in einem Fachgeschäft.
+Na twoim miejscu nie kupowałbym tej koszulki. — An deiner Stelle würde ich das T-Shirt nicht kaufen.
+Czy mogę zapłacić kartą debetową? — Kann ich mit EC-Karte bezahlen?
+Czy można tu zapłacić kartą kredytową? — Kann man hier mit Kreditkarte bezahlen?
+Czy mogę zapłacić gotówką? — Kann ich auch bar bezahlen?
+Jakie są godziny otwarcia? — Wie sind die Öffnungszeiten?
+Kiedy jest bank otwarty? — Wann ist die Bank geöffnet?
+Czy bank jest zamknięty? — Ist die Bank geschlossen?
+Jak mogę otworzyć konto osobiste? — Wie kann ich ein Girokonto eröffnen?
+Czy dostanę kredyt odnawialny? — Bekomme ich einen Dispositionskredit?
+Ile kosztuje konto miesięcznie? — Wie viel kostet das Konto monatlich?
+Jak mogę umówić się na spotkanie? — Wie kann ich einen Termin vereinbaren?
+Gdzie jest najbliższa filia banku? — Wo ist die nächste Bankfiliale?`.split('\n')
   .filter(line => line.includes('–'))
   .map(line => {
     const [pl, de] = line.split('–');
