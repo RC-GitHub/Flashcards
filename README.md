@@ -1,1 +1,2 @@
-Simple webpage for memorizing German words or sentences!
+# Flashcards
+is a imple webpage for memorizing words or sentences!
