@@ -1,2 +1,2 @@
 # Flashcards
-is a imple webpage for memorizing words or sentences!
+is a simple webpage for memorizing words or sentences!
