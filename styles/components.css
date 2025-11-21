@@ -6,7 +6,11 @@
     min-width: 100vw;
     min-height: 100vh;
 
-    background-color: var(--bg-glass);
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--blue-300) 50%, transparent),
+        color-mix(in srgb, var(--blue-700) 75%, transparent)
+    );
 
     backdrop-filter: blur(13px);
 }
@@ -15,7 +19,7 @@
     width: 500px;
     height: 300px;
 
-    padding: 10px;
+    padding: 20px;
     border-radius: 15px;
     border: 2px solid var(--blue-300);
 
