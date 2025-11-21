@@ -1,0 +1,31 @@
+:root {
+
+  --blue-100: rgb(232, 241, 255);
+  --blue-200: rgb(199, 220, 255);
+  --blue-300: rgb(159, 193, 255);
+  --blue-400: rgb(114, 164, 255);
+  --blue-500: rgb(75, 138, 255);  
+  --blue-600: rgb(47, 110, 230);
+  --blue-700: rgb(31, 86, 194);
+  --blue-800: rgb(22, 63, 149);
+  --blue-900: rgb(12, 37, 95);
+
+  --gray-100: rgb(244, 247, 250);
+  --gray-200: rgb(232, 236, 241);
+  --gray-300: rgb(204, 211, 219);
+  --gray-400: rgb(169, 179, 191);
+  --gray-500: rgb(124, 135, 150);
+  --gray-600: rgb(92, 102, 116);
+  --gray-700: rgb(69, 78, 89);
+  --gray-800: rgb(48, 54, 63);
+  --gray-900: rgb(28, 31, 36);
+
+  --bg-main: color-mix(in srgb, var(--blue-200) 25%, transparent);
+  --bg-border: color-mix(in srgb, var(--gray-800), 75%, transparent);
+  --bg-glass: color-mix(in srgb, var(--blue-700) 50%, transparent);
+
+  --text-main: var(--gray-900);
+  --text-muted: var(--gray-600);
+  --text-inverse: var(--gray-200);
+  
+}

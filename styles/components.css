@@ -1,0 +1,41 @@
+@import 'colors.css';
+
+.glassmorphism {
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-color: var(--bg-glass);
+
+    backdrop-filter: blur(13px);
+}
+
+.main {
+    width: 500px;
+    height: 300px;
+
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--blue-300);
+
+    background-color: var(--bg-main);
+}
+
+.main>* {
+    width: 100%;
+}
+
+.input {
+    padding: 10px;
+    border-radius: 7px;
+    border: 2px solid var(--blue-300);
+}
+
+.button {
+    padding: 10px;
+    border-radius: 7px;
+    border: 2px solid var(--blue-300);
+
+    background-color: var(--blue-200);
+}

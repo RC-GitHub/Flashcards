@@ -1,0 +1,30 @@
+@import 'components.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url('../assets/noise.gif');
+}
+
+.flex-col, .flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
